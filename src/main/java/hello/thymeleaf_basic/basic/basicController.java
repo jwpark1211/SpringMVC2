@@ -81,6 +81,14 @@ public class basicController {
         return "basic/literal";
     }
 
+    /*Operation은 꺽쇠와 같이 태그와 겹치는 부분만 조심해서 사용하면 된다!*/
+    @GetMapping("/operation")
+    public String operation(Model model){
+        model.addAttribute("nullData",null);
+        model.addAttribute("data","Spring!");
+        return "basic/operation";
+    }
+
     @Component("helloBean")
     static class HelloBean{
         public String hello(String data){
