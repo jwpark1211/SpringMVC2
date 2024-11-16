@@ -69,6 +69,17 @@ public class basicController {
         return "basic/link";
     }
 
+    /*리터럴 = 소스 코드 상에 코정된 값(하드코딩된 값)
+    * String a = "hello"; <- 문자 리터럴
+    * int a = 10*20; <- 숫자 리터럴
+    * 타임리프는 문자, 숫자, boolean, null 리터럴이 있다.
+    * 타임리프에서 문자 리터럴은 항상 작은 따옴표('')로 감싸야 한다. (ex: <span th:text="'hello world'">)
+    */
+    @GetMapping("/literal")
+    public String literal(Model model){
+        model.addAttribute("data","Spring!");
+        return "basic/literal";
+    }
 
     @Component("helloBean")
     static class HelloBean{
